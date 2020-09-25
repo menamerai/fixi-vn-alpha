@@ -1,0 +1,14 @@
+#navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.buttons {
+    display: flex;
+    flex-direction: row;
+}
+.MuiButton-sizeSmall {
+    margin-left: 10em;
+    margin-right: 10em;
+}

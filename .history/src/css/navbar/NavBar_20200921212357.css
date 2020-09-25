@@ -1,0 +1,16 @@
+#navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+/*
+.buttons {
+    display: flex;
+    flex-direction: row;
+}
+*/
+.button {
+    margin-left: 2em;
+    margin-right: 20em;
+}
