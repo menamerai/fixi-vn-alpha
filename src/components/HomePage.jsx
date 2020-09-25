@@ -1,6 +1,6 @@
 import React from "react";
-import { Box, TextField, InputBase } from "@material-ui/core";
-import SearchIcon from '@material-ui/icons/Search';
+import { Box } from "@material-ui/core";
+// mport SearchIcon from '@material-ui/icons/Search';
 import '../css/HomePage.css';
 // import { Autocomplete } from "@material-ui/lab";
 

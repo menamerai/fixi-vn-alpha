@@ -6,7 +6,6 @@ import {
   Menu,
   MenuItem,
   Box,
-  Collapse,
 } from "@material-ui/core";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
