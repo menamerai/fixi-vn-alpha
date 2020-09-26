@@ -6,6 +6,7 @@ import {
   Menu,
   MenuItem,
   Box,
+  IconButton,
 } from "@material-ui/core";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
@@ -66,7 +67,9 @@ const NavBar = () => {
       marginRight: "1em",
       color: "#0f75bc",
       fontWeight: "bold",
-      fontSize: 12
+      fontSize: 12,
+      borderRadius: "2em",
+      padding: "0.8em"
     },
   };
 
@@ -192,37 +195,43 @@ const NavBar = () => {
           </Menu>
         </Box>
         <Box id="icons">
-          <a href="https://www.facebook.com/FixiVietNam" target="_blank">
-            <FacebookIcon
-              className="icon"
-              fontSize="small"
-              style={{ color: "#0f75bc" }}
-            />
+          <a href="https://www.facebook.com/FixiVietNam" target="_blank" rel="noopener noreferrer">
+            <IconButton>
+              <FacebookIcon
+                className="icon"
+                fontSize="small"
+                style={{ color: "#0f75bc" }}
+              />
+            </IconButton>
           </a>
-          <a href="#">
+          <IconButton>
             <InstagramIcon
               className="icon"
               fontSize="small"
               style={{ color: "#0f75bc" }}
             />
-          </a>
-          <a href="#">
+          </IconButton>
+          <IconButton>
             <WhatsAppIcon
               className="icon"
               fontSize="small"
               style={{ color: "#0f75bc" }}
             />
-          </a>
-          <LanguageIcon
-            className="icon"
-            fontSize="small"
-            style={{ color: "#0f75bc" }}
-          />
-          <SearchIcon
-            className="icon"
-            fontSize="small"
-            style={{ color: "#0f75bc" }}
-          />
+          </IconButton>
+          <IconButton>
+            <LanguageIcon
+              className="icon"
+              fontSize="small"
+              style={{ color: "#0f75bc" }}
+            />
+          </IconButton>
+          <IconButton>
+            <SearchIcon
+              className="icon"
+              fontSize="small"
+              style={{ color: "#0f75bc" }}
+            />
+          </IconButton>
         </Box>
       </Toolbar>
     </AppBar>

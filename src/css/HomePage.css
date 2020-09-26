@@ -29,11 +29,11 @@
 #search-input {
     margin-left: 1em;
 }
-#search:hover {
-    background-color: rgba(91, 160, 209, 0.6);
-}
 .container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+#search:focus-within {
+    background-color: rgba(91, 160, 209, 0.6);
 }
