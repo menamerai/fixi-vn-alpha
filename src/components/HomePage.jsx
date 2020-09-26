@@ -14,6 +14,7 @@ const HomePage = () => {
           <SearchIcon />
         </IconButton>
       </Paper>
+      <img src={require("../images/clouds.png")} alt="patterns" id="patterns" />
     </Box>
   );
 };

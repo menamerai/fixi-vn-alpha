@@ -23,7 +23,7 @@
     justify-content: space-between;
     align-items: center;
     transition: all 300ms;
-    width: 30em;
+    width: 35em;
     margin-top: 1em;
 }
 #search-input {
@@ -36,4 +36,9 @@
 }
 #search:focus-within {
     background-color: rgba(91, 160, 209, 0.6);
+}
+#patterns {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
 }
