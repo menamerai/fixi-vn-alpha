@@ -192,21 +192,27 @@ const NavBar = () => {
           </Menu>
         </Box>
         <Box id="icons">
-          <FacebookIcon
-            className="icon"
-            fontSize="small"
-            style={{ color: "#0f75bc" }}
-          />
-          <InstagramIcon
-            className="icon"
-            fontSize="small"
-            style={{ color: "#0f75bc" }}
-          />
-          <WhatsAppIcon
-            className="icon"
-            fontSize="small"
-            style={{ color: "#0f75bc" }}
-          />
+          <a href="https://www.facebook.com/FixiVietNam" target="_blank">
+            <FacebookIcon
+              className="icon"
+              fontSize="small"
+              style={{ color: "#0f75bc" }}
+            />
+          </a>
+          <a href="#">
+            <InstagramIcon
+              className="icon"
+              fontSize="small"
+              style={{ color: "#0f75bc" }}
+            />
+          </a>
+          <a href="#">
+            <WhatsAppIcon
+              className="icon"
+              fontSize="small"
+              style={{ color: "#0f75bc" }}
+            />
+          </a>
           <LanguageIcon
             className="icon"
             fontSize="small"
