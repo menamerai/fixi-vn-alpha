@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Paper, InputBase, IconButton, Container, ButtonBase } from "@material-ui/core";
+import { Box, Paper, InputBase, IconButton } from "@material-ui/core";
 import SearchIcon from '@material-ui/icons/Search';
 import '../css/HomePage.css';
 // import { Autocomplete } from "@material-ui/lab";
