@@ -14,14 +14,9 @@ import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
 import BookIcon from '@material-ui/icons/Book';
 import { useHistory, withRouter } from "react-router-dom";
+import '../css/Drawer.css';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "20em",
-    minWidth: "300px",
-    maxWidth: "500px",
-    backgroundColor: theme.palette.background,
-  },
   nested: {
     paddingLeft: theme.spacing(4),
   },
@@ -60,7 +55,7 @@ const DrawerList = (props) => {
   };
 
   return (
-    <MuiList component="nav" className={classes.root}>
+    <MuiList id="nav-list" component="nav" >
       <MuiListItem
         button
         onClick={() => {
