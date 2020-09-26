@@ -13,6 +13,7 @@
 }
 #logo {
     width: 25em;
+    transition: width 300ms;
 }
 #search {
     background-color: transparent;
@@ -45,5 +46,8 @@
 @media (max-width: 849px) {
     #search {
         width: 75vw;
+    }
+    #logo {
+        width: 60vw;
     }
 }
