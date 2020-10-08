@@ -10,11 +10,11 @@ import { makeStyles } from "@material-ui/core/styles";
 import { ExpandLess, ExpandMore } from "@material-ui/icons";
 import HomeIcon from "@material-ui/icons/Home";
 import SchoolIcon from "@material-ui/icons/School";
-import TrendingUpIcon from '@material-ui/icons/TrendingUp';
-import WhatshotIcon from '@material-ui/icons/Whatshot';
-import BookIcon from '@material-ui/icons/Book';
+import TrendingUpIcon from "@material-ui/icons/TrendingUp";
+import WhatshotIcon from "@material-ui/icons/Whatshot";
+import BookIcon from "@material-ui/icons/Book";
 import { useHistory, withRouter } from "react-router-dom";
-import '../css/Drawer.css';
+import "../css/Drawer.css";
 
 const useStyles = makeStyles((theme) => ({
   nested: {
@@ -44,18 +44,39 @@ const DrawerList = (props) => {
         break;
       case "career":
         setOpen({ career: !open.career });
-        console.log("career")
+        console.log("career");
         break;
       case "story":
         setOpen({ story: !open.story });
         console.log("story");
         break;
-      default: break;
+      default:
+        break;
     }
   };
 
+  const jobMenus = {
+    "cong-nghe-ky-thuat": "Công nghệ, kỹ thuật",
+    "cong-nghe-thong-tin": "Công nghệ thông tin",
+    "khoa-hoc-tu-nhien": "Khoa học tự nhiên",
+    "khoa-hoc-xahoi-nhanvan": "Khoa học xã hội & nhân văn",
+    "kinh-te": "Kinh tế",
+    "kinh-doanh": "Kinh doanh",
+    "quan-ly": "Quản lý",
+    "y-duoc-tam-ly-hoc": "Y dược, tâm lý học",
+    "luat": "Luật",
+    "moi-truong": "Môi trường",
+    "nong-lam-ngu": "Nông, lâm, ngư nghiệp",
+    "giao-duc": "Giáo dục",
+    "san-xuat-che-bien" :"Sản xuất chế biến",
+    "kien-truc-xay-dung": "Kiến trúc và xây dựng",
+    "nghe-thuat-tham-my-do-hoa": "Nghệ thuật, thẩm mỹ và đồ họa",
+    "bao-chi-truyen-thong": "Báo chí và truyền thông",
+    "dich-vu": "Dịch vụ",
+  };
+
   return (
-    <MuiList id="nav-list" component="nav" >
+    <MuiList id="nav-list" component="nav">
       <MuiListItem
         button
         onClick={() => {
@@ -139,26 +160,36 @@ const DrawerList = (props) => {
       </MuiListItem>
       <Collapse in={open.career} timeout="auto" unmountOnExit>
         <MuiList component="div" disablePadding>
-          <MuiListItem
-            button
-            className={classes.nested}
-            onClick={() => {
-              history.push("/career1");
-              props.clickHandler();
-            }}
-          >
-            <ListItemText primary="Career1" />
-          </MuiListItem>
-          <MuiListItem
-            button
-            className={classes.nested}
-            onClick={() => {
-              history.push("/career2");
-              props.clickHandler();
-            }}
-          >
-            <ListItemText primary="Career2" />
-          </MuiListItem>
+          {[
+            "cong-nghe-ky-thuat",
+            "cong-nghe-thong-tin",
+            "khoa-hoc-tu-nhien",
+            "khoa-hoc-xahoi-nhanvan",
+            "kinh-te",
+            "kinh-doanh",
+            "quan-ly",
+            "y-duoc-tam-ly-hoc",
+            "luat",
+            "moi-truong",
+            "nong-lam-ngu",
+            "giao-duc",
+            "san-xuat-che-bien",
+            "kien-truc-xay-dung",
+            "nghe-thuat-tham-my-do-hoa",
+            "bao-chi-truyen-thong",
+            "dich-vu",
+          ].map((key) => (
+            <MuiListItem
+              button
+              className={classes.nested}
+              onClick={() => {
+                history.push("/" + key);
+                props.clickHandler();
+              }}
+            >
+              <ListItemText primary={jobMenus[key]} />
+            </MuiListItem>
+          ))}
         </MuiList>
       </Collapse>
       <MuiListItem id="story" button onClick={handleClick}>

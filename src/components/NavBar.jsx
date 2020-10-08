@@ -35,7 +35,7 @@ const NavBar = () => {
       story: null,
     });
     // console.log(event.currentTarget.id.match(/-[\s\S]+/gi));
-    const btnClicked = event.currentTarget.id.match(/(?<=-)([\s\S]+)/g);
+    const btnClicked = event.currentTarget.id.match(/(?<=_)([\s\S]+)/g);
     if (btnClicked) {
       history.push("/" + btnClicked[0]);
     }
@@ -61,6 +61,26 @@ const NavBar = () => {
     }
   };
 
+  const jobMenus = {
+    "cong-nghe-ky-thuat": "Công nghệ, kỹ thuật",
+    "cong-nghe-thong-tin": "Công nghệ thông tin",
+    "khoa-hoc-tu-nhien": "Khoa học tự nhiên",
+    "khoa-hoc-xahoi-nhanvan": "Khoa học xã hội & nhân văn",
+    "kinh-te": "Kinh tế",
+    "kinh-doanh": "Kinh doanh",
+    "quan-ly": "Quản lý",
+    "y-duoc-tam-ly-hoc": "Y dược, tâm lý học",
+    "luat": "Luật",
+    "moi-truong": "Môi trường",
+    "nong-lam-ngu": "Nông, lâm, ngư nghiệp",
+    "giao-duc": "Giáo dục",
+    "san-xuat-che-bien" :"Sản xuất chế biến",
+    "kien-truc-xay-dung": "Kiến trúc và xây dựng",
+    "nghe-thuat-tham-my-do-hoa": "Nghệ thuật, thẩm mỹ và đồ họa",
+    "bao-chi-truyen-thong": "Báo chí và truyền thông",
+    "dich-vu": "Dịch vụ",
+  }
+
   const styles = {
     button: {
       marginLeft: "1em",
@@ -69,7 +89,7 @@ const NavBar = () => {
       fontWeight: "bold",
       fontSize: 12,
       borderRadius: "2em",
-      padding: "0.8em"
+      padding: "0.8em",
     },
   };
 
@@ -159,12 +179,29 @@ const NavBar = () => {
             anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
             transformOrigin={{ vertical: "top", horizontal: "center" }}
           >
-            <MenuItem id="career-career1" onClick={handleClose}>
-              Career1
-            </MenuItem>
-            <MenuItem id="career-career2" onClick={handleClose}>
-              Career2
-            </MenuItem>
+            {[
+              "cong-nghe-ky-thuat",
+              "cong-nghe-thong-tin",
+              "khoa-hoc-tu-nhien",
+              "khoa-hoc-xahoi-nhanvan",
+              "kinh-te",
+              "kinh-doanh",
+              "quan-ly",
+              "y-duoc-tam-ly-hoc",
+              "luat",
+              "moi-truong",
+              "nong-lam-ngu",
+              "giao-duc",
+              "san-xuat-che-bien",
+              "kien-truc-xay-dung",
+              "nghe-thuat-tham-my-do-hoa",
+              "bao-chi-truyen-thong",
+              "dich-vu",
+            ].map(key => (
+              <MenuItem id={"career_" + key} onClick={handleClose}>
+                {jobMenus[key]}
+              </MenuItem>
+            ))}
           </Menu>
           <Button
             endIcon={<ExpandMoreIcon />}
@@ -195,7 +232,11 @@ const NavBar = () => {
           </Menu>
         </Box>
         <Box id="icons">
-          <a href="https://www.facebook.com/FixiVietNam" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.facebook.com/FixiVietNam"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <IconButton>
               <FacebookIcon
                 className="icon"
