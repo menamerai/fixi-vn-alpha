@@ -17,6 +17,8 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useHistory } from "react-router-dom";
 import "../css/NavBar.css";
 
+const axios = require("axios");
+
 const NavBar = () => {
   const history = useHistory();
   // Add menu anchors (?)
@@ -37,7 +39,13 @@ const NavBar = () => {
     // console.log(event.currentTarget.id.match(/-[\s\S]+/gi));
     const btnClicked = event.currentTarget.id.match(/(?<=_)([\s\S]+)/g);
     if (btnClicked) {
-      history.push("/" + btnClicked[0]);
+      history.push("/career/" + btnClicked[0]);
+      /*axios
+        .get("http://localhost:8080/career/" + btnClicked[0])
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((err) => console.log(err)); */
     }
   };
 
@@ -74,12 +82,12 @@ const NavBar = () => {
     "moi-truong": "Môi trường",
     "nong-lam-ngu": "Nông, lâm, ngư nghiệp",
     "giao-duc": "Giáo dục",
-    "san-xuat-che-bien" :"Sản xuất chế biến",
+    "san-xuat-che-bien": "Sản xuất chế biến",
     "kien-truc-xay-dung": "Kiến trúc và xây dựng",
     "nghe-thuat-tham-my-do-hoa": "Nghệ thuật, thẩm mỹ và đồ họa",
     "bao-chi-truyen-thong": "Báo chí và truyền thông",
     "dich-vu": "Dịch vụ",
-  }
+  };
 
   const styles = {
     button: {
@@ -197,7 +205,7 @@ const NavBar = () => {
               "nghe-thuat-tham-my-do-hoa",
               "bao-chi-truyen-thong",
               "dich-vu",
-            ].map(key => (
+            ].map((key) => (
               <MenuItem id={"career_" + key} onClick={handleClose}>
                 {jobMenus[key]}
               </MenuItem>

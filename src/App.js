@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from './components/NavBar';
 import NavDrawer from './components/Drawer';
 import HomePage from './components/HomePage';
+import BlogPage from './components/BlogPage';
 import './css/App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Media from 'react-media';
@@ -24,6 +25,9 @@ function App() {
         </Media>
         <Route exact path="/">
           <HomePage />
+        </Route>
+        <Route path="/career">
+          <BlogPage />
         </Route>
       </div>
     </BrowserRouter>
