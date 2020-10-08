@@ -17,8 +17,6 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useHistory } from "react-router-dom";
 import "../css/NavBar.css";
 
-const axios = require("axios");
-
 const NavBar = () => {
   const history = useHistory();
   // Add menu anchors (?)
@@ -40,12 +38,6 @@ const NavBar = () => {
     const btnClicked = event.currentTarget.id.match(/(?<=_)([\s\S]+)/g);
     if (btnClicked) {
       history.push("/career/" + btnClicked[0]);
-      /*axios
-        .get("http://localhost:8080/career/" + btnClicked[0])
-        .then((res) => {
-          console.log(res.data);
-        })
-        .catch((err) => console.log(err)); */
     }
   };
 

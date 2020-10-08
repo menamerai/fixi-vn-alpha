@@ -16,7 +16,7 @@ const BlogPage = () => {
   });
 
   return (
-    <p>{JSON.stringify(json[0], null, 2)}</p>
+    <p>{JSON.stringify(json, null, 2)}</p>
   )
 };
 
