@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardContent, Typography } from "@material-ui/core";
+import LineEllipsis from "react-lines-ellipsis";
 
 const BlogPaper = (props) => {
 
@@ -9,12 +10,16 @@ const BlogPaper = (props) => {
         <Typography variant="h5">
           {props.title}
         </Typography>
-        <Typography>
-          by {props.author}
+        <Typography class="author-texts">
+          <em>by {props.author}</em>
         </Typography>
-        <Typography>
-          {props.content}
-        </Typography>
+        <LineEllipsis
+          text={props.content}
+          maxLine="5"
+          ellipsis="..."
+          trimRight
+          basedOn="letters"
+        />
       </CardContent>
     </Card>
   );

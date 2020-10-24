@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import BlogPaper from "./BlogPaper";
 import '../css/BlogPage.css';
+import { Grid } from '@material-ui/core';
 
 const axios = require("axios");
 
@@ -22,20 +23,38 @@ const BlogPage = () => {
 
   return (
     <div id="blog-page">
-      <div id="blog-container">
+      <div id="blog-title">
+        {/*location.pathname.match(/(?<=\/career\/)*+/)[0].toUpperCase()*/}
+      </div>
+      <Grid container spacing={3} id="blog-container">
         {json.map((post) => {
           if (post !== "Loading...") {
-            return (
-              <BlogPaper
-                title={post.postName}
-                content={post.postContent}
-                author={post.postAuthor}
-                className="blog-papers"
-              />
-            );
+            if (json.indexOf(post) === 0) {
+              return (
+                <Grid item xs={6}>
+                  <BlogPaper
+                    title={post.postName}
+                    content={post.postContent}
+                    author={post.postAuthor}
+                    className="blog-main"
+                  />
+                </Grid>
+              );
+            } else {
+              return (
+                <Grid item xs={3}>
+                  <BlogPaper
+                    title={post.postName}
+                    content={post.postContent}
+                    author={post.postAuthor}
+                    className="blog-papers"
+                  />
+                </Grid>
+              );
+            }
           } else return <p>Loading...</p>;
         })}
-      </div>
+      </Grid>
     </div>
   );
 };

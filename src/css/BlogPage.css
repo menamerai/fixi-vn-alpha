@@ -1,16 +1,7 @@
-#blog-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-}
-
 #blog-container {
-    width: 50vw;
+    position: relative;
+    top: 100px;
 }
-
-.blog-papers {
-    margin: 2em;
+.author-texts {
+    opacity: 0.6;
 }

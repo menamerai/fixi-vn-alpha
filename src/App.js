@@ -11,7 +11,6 @@ function App() {
   return (
     <BrowserRouter>
       <div className="app">
-        {/*<NavBar />*/}
         <Media queries={{
           mobile: '(max-width: 849px)',
           desktop: '(min-width: 850px)'
