@@ -17,7 +17,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useHistory } from "react-router-dom";
 import "../css/NavBar.css";
 
-const NavBar = () => {
+const NavBar = props => {
   const history = useHistory();
   // Add menu anchors (?)
   const [anchor, setAnchor] = React.useState({
@@ -94,7 +94,7 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar position="fixed" color="transparent" elevation={0}>
+    <AppBar position="fixed" color={props.color} elevation={0}>
       <Toolbar id="navbar" component="nav">
         <Box id="buttons">
           <Button
