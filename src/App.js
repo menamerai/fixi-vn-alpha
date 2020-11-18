@@ -12,14 +12,15 @@ const App = () => {
   const location = useLocation();
 
   const [navStyle, setNavStyle] = React.useState("transparent");
-
+  {/*Deal with transparency later*/}
   React.useEffect(() => {
     if (location.pathname !== "/") {
-      setNavStyle("white");
+      setNavStyle("transparent");
     } else {
       setNavStyle("transparent");
     }
   }, [location.pathname]);
+  
   return (
     <div className="app">
       <Media

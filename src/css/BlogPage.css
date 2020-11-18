@@ -1,6 +1,11 @@
-#blog-container, #blog-title {
+#blog-container, #blog-title, #blog-background {
     position: relative;
-    top: 100px;
+    top: 70px;
+}
+@media (max-width: 849px) {
+    #blog-container, #blog-title, #blog-background {
+        top: 0;
+    }
 }
 .author-texts {
     opacity: 0.6;
@@ -13,7 +18,17 @@
     align-items: center;
 }
 #blog-page {
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,250,237,1) 20%, rgba(163,255,245,1) 80%, rgba(56,255,233,1) 100%);
+    background: #e6e7e9;
     height: 100%; 
+}
+#blog-background {
+    width: 100vw;
+    margin-bottom: 2em;
+}
+#background-overlay {
+    width: 600px;
+    position: absolute;
+    z-index: 0;
+    top: 130px;
+    left: 25vw;
 }
