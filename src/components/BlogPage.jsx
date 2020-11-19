@@ -46,12 +46,12 @@ const BlogPage = () => {
   return (
     <div id="blog-page">
       <img id="blog-background" src={require("../images/blogbackgroundoverlayed.png")} alt="Blog Background" />
-        {/*<Typography variant="h3">
+      <Container>
+        <Typography variant="h3" id="topic-title">
           {locationDict[
             location.pathname.match(/(?<=\/career\/)[\s\S]+/)[0]
           ].toUpperCase()}
-        </Typography>*/}
-      <Container>
+        </Typography>
         <Grid container spacing={3} id="blog-container">
           {json.map((post) => {
             if (post !== "Loading...") {
@@ -71,6 +71,8 @@ const BlogPage = () => {
                             content={post.postContent}
                             author={post.postAuthor}
                             className="blog-papers"
+                            link={post._id}
+                            division={post.postDivision}
                           />
                         </Grid>}
                       {matches.desktop && 
@@ -80,6 +82,7 @@ const BlogPage = () => {
                             content={post.postContent}
                             author={post.postAuthor}
                             className="blog-papers"
+                            link={post._id}
                           />
                         </Grid>}
                     </React.Fragment>
