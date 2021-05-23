@@ -37,7 +37,7 @@ const BlogPage = () => {
 
   React.useEffect(() => {
     axios
-      .get(process.env.REACT_APP_BACKEND + ":" + process.env.REACT_APP_PRT + location.pathname)
+      .get(process.env.REACT_APP_BACKEND /* + ":" + process.env.REACT_APP_PRT */ + location.pathname)
       .then((res) => {
         setJson(res.data);
       })
