@@ -23,7 +23,7 @@ const BlogPost = () => {
 
   React.useEffect(() => {
     axios
-      .get(process.env.REACT_APP_BACKEND + ":" + process.env.REACT_APP_PRT + "/career/" + division + "/" + id)
+      .get(process.env.REACT_APP_BACKEND /* + ":" + process.env.REACT_APP_PRT */ + "/career/" + division + "/" + id)
       .then((res) => {
         console.log(res);
         setFile(new Uint8Array(res.data.postContent.data));
