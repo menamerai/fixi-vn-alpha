@@ -42,3 +42,12 @@ html {
 a {
     text-decoration: none;
 }
+.header {
+    text-align: center;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

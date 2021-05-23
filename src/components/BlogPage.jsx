@@ -5,6 +5,8 @@ import { Grid, Typography, Container } from "@material-ui/core";
 import Media from "react-media";
 import "../css/BlogPage.css";
 
+require("dotenv").config();
+
 const axios = require("axios");
 
 const BlogPage = () => {
@@ -35,11 +37,13 @@ const BlogPage = () => {
 
   React.useEffect(() => {
     axios
-      .get("http://localhost:8080" + location.pathname)
+      .get(process.env.REACT_APP_BACKEND + ":" + process.env.REACT_APP_PRT + location.pathname)
       .then((res) => {
         setJson(res.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+      });
     console.log(json);
   }, [location]);
 
@@ -49,7 +53,7 @@ const BlogPage = () => {
       <Container>
         <Typography variant="h3" id="topic-title">
           {locationDict[
-            location.pathname.match(/(?<=\/career\/)[\s\S]+/)[0]
+            location.pathname.match(/(?<=\/career\/)[\w-]+/)[0]
           ].toUpperCase()}
         </Typography>
         <Grid container spacing={3} id="blog-container">
@@ -67,22 +71,21 @@ const BlogPage = () => {
                       {matches.mobile && 
                         <Grid item xs={12}>
                           <BlogPaper
-                            title={post.postName}
-                            content={post.postContent}
-                            author={post.postAuthor}
                             className="blog-papers"
                             link={post._id}
                             division={post.postDivision}
+                            img={post.postImgId}
+                            title={post.postTitle}
                           />
                         </Grid>}
                       {matches.desktop && 
                         <Grid item xs={4}>
                           <BlogPaper
-                            title={post.postName}
-                            content={post.postContent}
-                            author={post.postAuthor}
                             className="blog-papers"
                             link={post._id}
+                            division={post.postDivision}
+                            img={post.postImgId}
+                            title={post.postTitle}
                           />
                         </Grid>}
                     </React.Fragment>
