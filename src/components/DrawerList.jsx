@@ -183,7 +183,7 @@ const DrawerList = (props) => {
               button
               className={classes.nested}
               onClick={() => {
-                history.push("/" + key);
+                history.push("/career/" + key);
                 props.clickHandler();
               }}
             >
