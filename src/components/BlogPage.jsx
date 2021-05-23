@@ -40,6 +40,7 @@ const BlogPage = () => {
       .get(process.env.REACT_APP_BACKEND /* + ":" + process.env.REACT_APP_PRT */ + location.pathname)
       .then((res) => {
         setJson(res.data);
+        console.log(json);
       })
       .catch((err) => {
         console.log(err);
